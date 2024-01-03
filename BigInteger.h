@@ -8,21 +8,21 @@ struct node
     int data;
     struct node *next;
 };
-struct BigInteger
+typedef struct BigInteger
 {
     struct node *L;
     int length;
-};
-struct BigInteger initialize(char *s);
-struct BigInteger rev(struct BigInteger);
-struct BigInteger add(struct BigInteger, struct BigInteger);
-struct BigInteger sub(struct BigInteger, struct BigInteger);
-struct BigInteger mul(struct BigInteger, struct BigInteger);
-struct BigInteger div1(struct BigInteger, struct BigInteger);
-struct BigInteger mod(struct BigInteger, struct BigInteger);
-struct BigInteger length(struct BigInteger);
-void compare(struct BigInteger*, struct BigInteger*);
-int comp(struct BigInteger, struct BigInteger);
-void free_list(struct node *);
-void display(struct BigInteger);
+}BI;
+BI initialize(char *s);
+BI rev(struct BigInteger);
+BI add(BI, BI);
+BI sub(BI, BI);
+BI mul(BI, BI);
+struct BigInteger div1(BI, BI);
+struct BigInteger mod(BI, BI);
+struct BigInteger length(BI);
+void compare(BI*, BI*);
+int comp(BI, BI);
+void free_list(BI*);
+void display(BI);
 #endif
